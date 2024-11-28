@@ -2,6 +2,8 @@
 
 <h3>Erros encontrados no código</h3>
 
+<li>Falta de main no código</li>
+
 Inicialmente não foi possível executar o código, pois ele não inclui um método main, impedindo a execução do programa em Java.
 Adicionei um método main para executar o código:
 
@@ -37,7 +39,7 @@ Para corrigir isso, pode ser retornada a mensagem de erro dessa forma:
 
 <li>Falta de verificação da conexão com o Banco de Dados</li>
 
-Ao retornar a conexão do banco de dados no código, no final do método conectarBD, não verifica se ela está nula.
+Ao retornar a conexão do banco de dados no código, no final do método conectarBD, não retorna uma mensagem de falha alertando o erro se caso a conexão esteje nula.
 
 <pre>return conn;}</pre>
 
@@ -63,5 +65,59 @@ Seria necessário adicionar um if, para verificar se o conn não está nulo e re
 
 Dessa forma, caso algum erro ocorra, há um retorno no console que ocorreu uma falha, pois sem isso, se torna mais trabalhoso identificar o problema já que não está sendo exibido, seja ele, uma falha com o driver ou url incorreta.
 
+No caso anterior, o erro é referenciado ao retorno para que o programador ou que o usuário saiba como tratar das falhas. Ja o erro indicado abaixo, seria referente ao método verificarUsuário.
+
+<li>Erro no método verificarUsuario</li>
+
+Como não há um if, sendo um verificação se conn está nulo antes de usar, ao tentar acessar as instruções SQL, o método tentará executar essas instruções com uma coneção inválida, sendo ela nula, causando então um NullPointerException. 
+
+A verificação poderia ficar antes das instuções SQL:
+
+<pre><code>    
+Connection conn = conectarBD();
+   if (conn == null) {
+       System.out.println("Conexão com o banco de dados inválida.");
+       return false;
+   }</code></pre>
+
+<li>Objetos não fechados</li>
+
+Os objetos usados no código, Statement, ResultSet e a conexão, Connection, não são fechados após o uso, como indicado no código abaixo.
+
+<pre> 
+   try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            if (rs.next()) {
+                result = true;
+                nome = rs.getString("nome");
+            }
+        } catch (Exception e) {} 
+</pre>
+
+Isso pode resultar em várias conexões abertas no banco, fazendo com que o banco atinja seu limite máximo de conexões por permanecerem ocupando memória de forma desnecessária. Para resolver isso, é possível usar o *"finally"* para garantir que esses recursos sejam de fato fechados. O código com o *"finally"* ficaria dessa forma:
+
+<pre>
+    try {
+         Statement st = conn.createStatement();
+         ResultSet rs = st.executeQuery(sql);
+         if (rs.next()) {
+            result = true;
+             nome = rs.getString("nome");
+         }
+    } catch (Exception e) {
+         //mensagem de erro
+    } finally {
+         try {
+             if (st != null) st.close();
+             if (rs != null) rs.close();
+             if (conn != null) conn.close();
+         } catch (Expection e) {
+                System.out.println("Erro ao fechar os recursos: " + e.getMessage());
+         }
+    }
+</pre>
+
+     
 
 
