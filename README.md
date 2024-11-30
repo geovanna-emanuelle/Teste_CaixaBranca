@@ -2,7 +2,7 @@
 
 <h3 align="center"> Grafo de Fluxo</h3>
 
-<img src="./fluxoDeGrafo.png" alt="Fluxo de Grafo" style="width: 50%; height: auto; display: block; margin: 0 auto;" aligh="center">
+<img src="./fluxoDeGrafo.png" alt="Fluxo de Grafo" style="width: 50%; height: auto; display: block; margin: 0 auto;" align="center">
 
 <h3>Complexidade Ciclomática</h3>
 
