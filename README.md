@@ -39,6 +39,14 @@ Método <i>verificarUsuário</i> - Executa o bloco try sem sucesso, ocorrendo um
 <h3><i>Resumo dos caminhos:</i></h3>
 
 <li>Caminho (1): 1 - 2 - 3 - 4 - 7 - 8 - 9 - 10 - 11 - 12 - 13 - 14 - 15 - 16 - 17 - 18 - 19 - 22 - 23</li>
+<img src="./imagens_caminhos/caminho_conectarBD.png" alt="código" style="display: block; margin: 0 auto; width: 50%; height: auto;">
+<img src="./imagens_caminhos/caminho1_verificarUsuario.png" alt="código" style="display: block; margin: 0 auto; width: 50%; height: auto;">
 <li>Caminho (2): 1 - 2 - 3 - 4 - 5 - 7 - 8 - 9 - 10- 11- 12 - 13- 14 - 15 - 16 - 17 - 18 - 22 - 23</li>
+<img src="./imagens_caminhos/caminho_conectarBD.png" alt="código" style="display: block; margin: 0 auto; width: 50%; height: auto;">
+<img src="./imagens_caminhos/caminho2_verificarUsuario.png" alt="código" style="display: block; margin: 0 auto; width: 50%; height: auto;">
 <li>Caminho (3): 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10 - 11 - 12 - 13 - 14 - 15 - 16 - 17 - 20 - 21 - 22 - 23</li>
+<img src="./imagens_caminhos/caminho2_conectarBD.png" alt="código" style="display: block; margin: 0 auto; width: 50%; height: auto;">
+<img src="./imagens_caminhos/caminho3_verificarUsuario.png" alt="código" style="display: block; margin: 0 auto; width: 50%; height: auto;">
 <li>Caminho (4): 1 - 2 - 3 - 4 - 7 - 8 - 9 - 10 - 11 - 12 - 13 - 14 - 15 - 16 - 20 - 21 - 22 - 23</li>
+<img src="./imagens_caminhos/caminho2_conectarBD.png" alt="código" style="display: block; margin: 0 auto; width: 50%; height: auto;">
+<img src="./imagens_caminhos/caminho4_verificarUsuario.png" alt="código" style="display: block; margin: 0 auto; width: 50%; height: auto;">
