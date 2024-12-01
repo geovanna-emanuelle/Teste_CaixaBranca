@@ -25,6 +25,7 @@ public class UserNumerado {
         // **7** - retorna a conexão
         return conn;
     } // **8** - fecha o método conectarBD
+    
     // **9** - declara a variavel nome
     public String nome = "";
     // **10** - declara a variavel result
@@ -52,7 +53,7 @@ public class UserNumerado {
             // **17**  - execução da query
             ResultSet rs = st.executeQuery(sql);
 
-            // **18** - Verifica o resulta da query
+            // **18** - Verifica o resultado da query
             if (rs.next()) {
                 // **19** - atualiza o resultado e o nome
                 result = true;
